@@ -1,29 +1,40 @@
 
 ## Structure of the repo:
-- [x] **data**
+
+- **data**
     
     Datasets and all data-related stuff is here.
     it could be symbolic link.
 
-- [x] **experiments** 
+- **experiments** 
 
     Folder contains all intermediate results from different experiments
     (param files, checkpoints, logs, ...) 
                 
-- [x] **notebooks**
+- **notebooks**
 
     placeholder for jupyter notebooks.
     notebooks could contain some analysis
     (dataset analysis, evalution results), demo, some ongoing work
 
-- [x] **results**
+- **results**
 
     The useful results are stored here.
     
-- [x] **src**
+- **src**
 
     place for codebase
     
-- [x] **README.md**
+- **README.md**
 
     markdown readme
+    
+## How to run
+
+> python src/main_train.py --param_file experiments/cfgs/params_cifar10.yaml
+
+or
+
+> python src/main_train.py --param_file experiments/cfgs/params_mnist.yaml
+
+etc

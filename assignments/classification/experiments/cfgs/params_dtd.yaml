@@ -1,5 +1,5 @@
 # general
-experiment_name: 'e0003'     # prefix of all artifacts ('' means None, create next name)
+experiment_name: "e0003"     # prefix of all artifacts ('' means None, create next name)
 seed: 42                     # random seed
 with_cuda: True              # CUDA training
 path_save: "experiments/"    # path to save models, checkpoints, logs
