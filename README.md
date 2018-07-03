@@ -1,4 +1,4 @@
-# LDSSS2017
+# UCU DL4CV 
 
 This repository contains materials for "Deep Learning for Computer Vision" course.
 
