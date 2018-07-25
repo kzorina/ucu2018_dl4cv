@@ -3,7 +3,7 @@ import yaml
 
 import torch
 import torch.nn as nn
-
+from tensorboardX import SummaryWriter
 from logger import Logger
 from timer import Timer
 
@@ -13,6 +13,8 @@ from datasets.ds_factory import DatasetFactory
 from utils import handle_device, next_expr_name, load_checkpoint, save_checkpoint
 from train_validate import train_epoch, validate
 
+save_path = "./logs/exp_11"
+writer = SummaryWriter(save_path)
 
 def train(params, log, time_keeper):
     # specify dataset
@@ -83,6 +85,12 @@ def train(params, log, time_keeper):
                       acc_train, loss_train,
                       acc_val, loss_val,
                       is_best, time_string)
+        writer.add_scalar("Train accuracy ", acc_train, epoch + 1)
+        writer.add_scalar("Train Loss ", loss_train, epoch + 1)
+        writer.add_scalar("Test accuracy ", acc_val, epoch + 1)
+        writer.add_scalar("Test Loss ", loss_val, epoch + 1)
+        writer.add
+
 
 
 if __name__ == "__main__":
