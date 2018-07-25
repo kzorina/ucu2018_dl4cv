@@ -107,7 +107,7 @@ if __name__ == "__main__":
 
     # experiment name
     if len(params['experiment_name']) == 0:
-        params['experiment_name'] = next_expr_name(params['LOG']['path'], "e", 4)
+        params['experiment_name'] = next_expr_name(params['path_save'], "e", 4)
 
     # manage gpu/cpu devices
     params['device'] = handle_device(params['with_cuda'])

@@ -16,3 +16,6 @@ assignments/classification/data/mnist
 
 # models
 *.pth*
+
+# experiments log files
+assignments/classification/experiments/*log*
