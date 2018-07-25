@@ -19,5 +19,6 @@ class ModelFactory(object):
             return LeNet1x28x28()
         elif params['MODEL']['name'] == 'lenet_in3x32x32_out10':
             return LeNet3x32x32()
+        # elif ...
 
         raise ValueError("ModelFactory(): Unknown Model type: " + params['Model']['type'])

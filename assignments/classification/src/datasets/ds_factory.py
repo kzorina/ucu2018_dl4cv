@@ -31,5 +31,8 @@ class DatasetFactory(object):
             return DataSetDTD(params['DATASET']['path'],
                               batch_size_train=params['DATASET']['batch_size'],
                               batch_size_val=params['DATASET']['batch_size_val'])
-
+        elif params['DATASET']['name'] == 'fashion':
+            return DataSetDTD(params['DATASET']['path'],
+                              batch_size_train=params['DATASET']['batch_size'],
+                              batch_size_val=params['DATASET']['batch_size_val'])
         raise ValueError("DatasetFactory(): Unknown Dataset type: " + params['Dataset']['type'])
