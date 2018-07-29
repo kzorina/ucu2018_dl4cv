@@ -31,15 +31,15 @@ For comparison I used only 20 epoch to speed up the computation.
 As we can see on the next plots, around 20 epoch our model started to overfit.
 
 ![Acc vs Epoch](fig/e_0017_train_acc.PNG?ra=true "Train Acc vs Epoch")
-![Acc vs Epoch](fig/e_0017_test_acc.png?ra=true "Test Acc vs Epoch")
-![Acc vs Epoch](fig/e_0017_train_loss.png?ra=true "Train Loss vs Epoch")
-![Acc vs Epoch](fig/e_0017_test_loss.png?ra=true "Test Loss vs Epoch")
+![Acc vs Epoch](fig/e_0017_test_acc.PNG?ra=true "Test Acc vs Epoch")
+![Acc vs Epoch](fig/e_0017_train_loss.PNG?ra=true "Train Loss vs Epoch")
+![Acc vs Epoch](fig/e_0017_test_loss.PNG?ra=true "Test Loss vs Epoch")
 
 Next experiments will be compared to this basic, but 20 epochs:
  
 
-![Acc vs Epoch](fig/e_0055_test_acc.png?ra=true "Test Acc vs Epoch")
-![Acc vs Epoch](fig/e_0055_test_loss.png?ra=true "Test Loss vs Epoch")
+![Acc vs Epoch](fig/e_0055_test_acc.PNG?ra=true "Test Acc vs Epoch")
+![Acc vs Epoch](fig/e_0055_test_loss.PNG?ra=true "Test Loss vs Epoch")
 
 ## Conclusion
 
@@ -47,7 +47,7 @@ We get around 79% accuracy on baseline model. Let's try what will change if we c
 
 <!--- ###################################################### ---> 
 
-# Data augmentation 1
+# Data augmentation
 
 I decided to try some augmentations. First let's try random affine transformations.
 
@@ -83,8 +83,8 @@ On first we can see transformation applied. Second image shows that test accurac
 
 
 
-![Acc vs Epoch](fig/e_0065_images.png?ra=true "Images transformation")
-![Acc vs Epoch](fig/e_0065_test_accuracy.png?ra=true "Test Accuracy vs Epoch")
+![Acc vs Epoch](fig/e_0065_images.PNG?ra=true "Images transformation")
+![Acc vs Epoch](fig/e_0065_test_accuracy.PNG?ra=true "Test Accuracy vs Epoch")
 
  
 
@@ -130,8 +130,8 @@ model = resnet18(pretrained=True)
 
 On next plots we can see how ResNet (gray one) outperforms LeNet from the first epoch!
 
-![Acc vs Epoch](fig/e_0068_test_acc.png?ra=true "Test Acc vs Epoch")
-![Acc vs Epoch](fig/e_0068_test_loss.png?ra=true "Test Loss vs Epoch")
+![Acc vs Epoch](fig/e_0068_test_acc.PNG?ra=true "Test Acc vs Epoch")
+![Acc vs Epoch](fig/e_0068_test_loss.PNG?ra=true "Test Loss vs Epoch")
 
  
 
@@ -145,16 +145,16 @@ As I did not manage to get UCU GPU to work with this models - I will continue wi
 # Manually cleaning
 
 I decided to look, which category model is getting wrong.
-![Acc vs Epoch](fig/e_0055_accuracy_dress.png?ra=true "Accuracy Dress")
-![Acc vs Epoch](fig/e_0055_accuracy_hoodie.png?ra=true "Accuracy Hoodie")
-![Acc vs Epoch](fig/e_0055_accuracy_jeans.png?ra=true "Accuracy Jeans")
-![Acc vs Epoch](fig/e_0055_accuracy_scirt.png?ra=true "Accuracy Scirt")
-![Acc vs Epoch](fig/e_0055_accuracy_shorts.png?ra=true "Accuracy Shorts")
-![Acc vs Epoch](fig/e_0055_accuracy_tee.png?ra=true "Accuracy Tee")
+![Acc vs Epoch](fig/e_0055_accuracy_dress.PNG?ra=true "Accuracy Dress")
+![Acc vs Epoch](fig/e_0055_accuracy_hoodie.PNG?ra=true "Accuracy Hoodie")
+![Acc vs Epoch](fig/e_0055_accuracy_jeans.PNG?ra=true "Accuracy Jeans")
+![Acc vs Epoch](fig/e_0055_accuracy_scirt.PNG?ra=true "Accuracy Scirt")
+![Acc vs Epoch](fig/e_0055_accuracy_shorts.PNG?ra=true "Accuracy Shorts")
+![Acc vs Epoch](fig/e_0055_accuracy_tee.PNG?ra=true "Accuracy Tee")
 
 As we can see, hoodie accuracy is drastically bad. 
 I looked on the real images and I think, I understand neural net :)
-![Acc vs Epoch](fig/Hoodie_strange.png?ra=true "Data")
+![Acc vs Epoch](fig/Hoodie_strange.PNG?ra=true "Data")
 I would also name some of them tee or scirt.
 So I decided to manually clean data for Hoodies.
 
@@ -175,7 +175,7 @@ Deleted about 200 images of fake hoodies.
 
 It seems that accuracy for Hoodie became better, but not significantly
 
-![Acc vs Epoch](fig/e_0072_accuracy_hoodie.png?ra=true "Accuracy Hoodie")
+![Acc vs Epoch](fig/e_0072_accuracy_hoodie.PNG?ra=true "Accuracy Hoodie")
 
 
 ## Conclusion
@@ -209,9 +209,9 @@ exp_lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=6, gamma
 We can see that test accuracy and loss remain the same while train became less sensitive to overfit.
 
 ![Acc vs Epoch](fig/e_0078_train_acc.PNG?ra=true "Train Acc vs Epoch")
-![Acc vs Epoch](fig/e_0078_test_acc.png?ra=true "Test Acc vs Epoch")
-![Acc vs Epoch](fig/e_0078_train_loss.png?ra=true "Train Loss vs Epoch")
-![Acc vs Epoch](fig/e_0078_test_loss.png?ra=true "Test Loss vs Epoch")
+![Acc vs Epoch](fig/e_0078_test_acc.PNG?ra=true "Test Acc vs Epoch")
+![Acc vs Epoch](fig/e_0078_train_loss.PNG?ra=true "Train Loss vs Epoch")
+![Acc vs Epoch](fig/e_0078_test_loss.PNG?ra=true "Test Loss vs Epoch")
 
  
 
@@ -247,9 +247,9 @@ optimizer = torch.optim.Adam(model.parameters(),
 Converging is faster and accuracy is slightly better.
 
 ![Acc vs Epoch](fig/e_0079_train_acc.PNG?ra=true "Train Acc vs Epoch")
-![Acc vs Epoch](fig/e_0079_test_acc.png?ra=true "Test Acc vs Epoch")
-![Acc vs Epoch](fig/e_0079_train_loss.png?ra=true "Train Loss vs Epoch")
-![Acc vs Epoch](fig/e_0079_test_loss.png?ra=true "Test Loss vs Epoch")
+![Acc vs Epoch](fig/e_0079_test_acc.PNG?ra=true "Test Acc vs Epoch")
+![Acc vs Epoch](fig/e_0079_train_loss.PNG?ra=true "Train Loss vs Epoch")
+![Acc vs Epoch](fig/e_0079_test_loss.PNG?ra=true "Test Loss vs Epoch")
 
  
 
@@ -290,17 +290,18 @@ Training time [cpu]: ~ 40 min. (14 epochs)
   
 ## Interpretation
 
-On next plots we can see how ResNet (gray one) overperforms LeNet from the first epoch!
+Loss and accuracy are slightly worth, but it is very interesting that not too much. 
 
-![Acc vs Epoch](fig/e_0068_test_acc.png?ra=true "Test Acc vs Epoch")
-![Acc vs Epoch](fig/e_0068_test_loss.png?ra=true "Test Loss vs Epoch")
+![Acc vs Epoch](fig/e_0080_train_acc.PNG?ra=true "Train Acc vs Epoch")
+![Acc vs Epoch](fig/e_0080_test_acc.PNG?ra=true "Test Acc vs Epoch")
+![Acc vs Epoch](fig/e_0080_train_loss.PNG?ra=true "Train Loss vs Epoch")
+![Acc vs Epoch](fig/e_0080_test_loss.PNG?ra=true "Test Loss vs Epoch")
 
  
 
 ## Conclusion
 
-ResNet is good. But for ResNet, VGG and other complex models we need good computational power. 
-As I did not manage to get UCU GPU to work with this models - I will continue with simple LeNet.
+For current task color doesn't play important role!
   
 <!--- ###################################################### --->
 
