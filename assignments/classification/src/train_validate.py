@@ -1,7 +1,9 @@
 import torch
+import torchvision.utils as tvutils
 
+PRINT_EACH = 1000
 
-def train_epoch(train_loader, model, criterion, optimizer, epoch, device, log, timer):
+def train_epoch(train_loader, model, criterion, optimizer, epoch, device, log, timer, writer, exp_lr_scheduler):
     losses = AverageMeter()
     top1 = AverageMeter()
 
@@ -18,6 +20,14 @@ def train_epoch(train_loader, model, criterion, optimizer, epoch, device, log, t
         # compute output
         output = model(input_data)
         loss = criterion(output, target)
+
+
+        #to include images to tensorboard
+        # if i % PRINT_EACH == 0:
+        #     imgs = tvutils.make_grid(input_data, normalize=True, scale_each=True)
+        #     writer.add_image("Image_{}".format(i), imgs)
+
+
 
         # measure accuracy and record loss
         prec1 = accuracy(output, target)

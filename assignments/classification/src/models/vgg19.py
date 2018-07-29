@@ -1,10 +1,12 @@
 import torch.nn as nn
 import torch.nn.functional as F
+from torchvision import models
+from collections import namedtuple
 
 
-class LeNet3x32x32(nn.Module):
+class Vgg19(nn.Module):
     def __init__(self):
-        super(LeNet3x32x32, self).__init__()
+        super(Vgg19, self).__init__()
         self.conv1 = nn.Conv2d(3, 6, 5)
         self.pool = nn.MaxPool2d(2, 2)
         self.conv2 = nn.Conv2d(6, 16, 5)

@@ -13,10 +13,15 @@ from datasets.ds_factory import DatasetFactory
 from utils import handle_device, next_expr_name, load_checkpoint, save_checkpoint
 from train_validate import train_epoch, validate
 
-save_path = "./logs/exp_11"
-writer = SummaryWriter(save_path)
+# save_path = "./logs/exp_11"
+# writer = SummaryWriter(save_path)
 
-def train(params, log, time_keeper):
+classes = ('Tee', 'Hoodie', 'Skirt', 'Shorts', 'Dress', 'Jeans')
+
+
+def train(params, log, time_keeper, tboard_exp_path):
+    writer = SummaryWriter(tboard_exp_path)
+
     # specify dataset
     data = DatasetFactory.create(params)
 
@@ -26,9 +31,24 @@ def train(params, log, time_keeper):
 
     # define loss function (criterion) and optimizer
     criterion = nn.CrossEntropyLoss().to(params['device'])
-    optimizer = torch.optim.SGD(model.parameters(),
+
+    if params['MODEL']['name'] == 'resnet18':
+        optimizer = torch.optim.SGD(model.fc.parameters(),
+                                    lr=params['TRAIN']['lr'],
+                                    momentum=params['TRAIN']['momentum'])
+    elif params['MODEL']['name'] == 'vgg19':
+        optimizer = torch.optim.SGD(filter(lambda p: p.requires_grad,model.parameters()),
                                 lr=params['TRAIN']['lr'],
                                 momentum=params['TRAIN']['momentum'])
+    else:
+            optimizer = torch.optim.SGD(model.parameters(),
+                                    lr=params['TRAIN']['lr'],
+                                    momentum=params['TRAIN']['momentum'])
+
+
+    # DRAFT FOR EXPERIMENT
+    exp_lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=6, gamma=0.1)
+
 
     # resume from a checkpoint
     if len(params['TRAIN']['resume']) > 0:
@@ -60,13 +80,49 @@ def train(params, log, time_keeper):
 
         # train for one epoch
         _, _ = train_epoch(data.loader['train'], model, criterion, optimizer, epoch,
-                           params['device'], log, timer)
+                           params['device'], log, timer, writer, exp_lr_scheduler)
 
         # evaluate on train set
         acc_train, loss_train = validate(data.loader['train'], model, criterion, params['device'])
 
         # evaluate on validation set
         acc_val, loss_val = validate(data.loader['val'], model, criterion, params['device'])
+
+
+
+        correct = 0
+        total = 0
+
+        class_correct = list(0. for i in range(len(classes)))
+        class_total = list(0. for i in range(len(classes)))
+
+
+        hoodie_not_correct = []
+
+        with torch.no_grad():
+            for (input_data, target) in data.loader['train']:
+                images = input_data.to(params['device'])
+                labels = target.to(params['device'])
+                outputs = model(images)
+                _, predicted = torch.max(outputs.data, 1)
+                c = (predicted == labels).squeeze()
+                total += labels.size(0)
+                correct += (predicted == labels).sum().item()
+                for j in range(4):
+                    label = labels[j]
+                    class_correct[label] += c[j].item()
+                    class_total[label] += 1
+
+
+
+        print('Accuracy of the network on the % epoch test images: %d %%' % (epoch,
+                100 * correct / total))
+        for k in range(len(classes)):
+            print('Accuracy of %5s : %2d %%' % (
+                classes[k], 100 * class_correct[k] / class_total[k]))
+            writer.add_scalar('Accuracy of %5s' %
+                classes[k], (100 * class_correct[k] / class_total[k]), epoch + 1)
+
 
         # remember best prec@1 and save checkpoint
         is_best = acc_val > best_prec
@@ -89,7 +145,7 @@ def train(params, log, time_keeper):
         writer.add_scalar("Train Loss ", loss_train, epoch + 1)
         writer.add_scalar("Test accuracy ", acc_val, epoch + 1)
         writer.add_scalar("Test Loss ", loss_val, epoch + 1)
-        writer.add
+        exp_lr_scheduler.step()
 
 
 
@@ -109,6 +165,8 @@ if __name__ == "__main__":
     if len(params['experiment_name']) == 0:
         params['experiment_name'] = next_expr_name(params['path_save'], "e", 4)
 
+    tboard_exp_path = "./logs/" + params['experiment_name']
+
     # manage gpu/cpu devices
     params['device'] = handle_device(params['with_cuda'])
 
@@ -119,7 +177,7 @@ if __name__ == "__main__":
     timer = Timer("global")
 
     # train
-    train(params, logger, timer)
+    train(params, logger, timer, tboard_exp_path)
 
     # close all log files
     logger.close()

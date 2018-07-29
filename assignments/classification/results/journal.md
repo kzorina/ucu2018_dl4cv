@@ -157,7 +157,7 @@ I decided to look, which category model is getting wrong.
 As we can see, hoodie accuracy is drastically bad. 
 I looked on the real images and I think, I understand neural net :)
 ![Acc vs Epoch](fig/Hoodie_strange.PNG?ra=true "Data")
-I would also name some of them tee or scirt.
+I would also name some of them tee or dress.
 
 So I decided to manually clean data for Hoodies.
 

@@ -22,4 +22,4 @@ DATASET:
 
 LOG:
   iter_interval: 10     # how often (iter) display training details
-  visdom: False
+  visdom: True

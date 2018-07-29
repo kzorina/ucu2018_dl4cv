@@ -6,9 +6,9 @@ import torchvision.transforms as transforms
 import torchvision.datasets as dsets
 
 
-class DataSetDTD(object):
+class DataSetDeepFashion(object):
     """
-    Class manage DTD data-set
+    Class manage DeepFAshion data-set
     """
 
     def __init__(self,
@@ -22,14 +22,37 @@ class DataSetDTD(object):
         imagenet_std = [0.229, 0.224, 0.225]
 
         init_transform = transforms.Compose([
-            transforms.Resize(224),
-            transforms.CenterCrop(224),
+            transforms.Resize(299),
+            transforms.CenterCrop(299),
             transforms.Resize(fin_scale),
+            transforms.Grayscale(3),
             transforms.ToTensor(),
-            transforms.RandomHorizontalFlip(),
             transforms.Normalize(mean=imagenet_mean,
                                  std=imagenet_std)
         ])
+
+        # init_transform = transforms.Compose([
+        #     transforms.Resize(299),
+        #     transforms.CenterCrop(299),
+        #     transforms.RandomAffine(15, (0.1, 0.1)),
+        #     #transforms.FiveCrop(fin_scale),
+        #     #transforms.Lambda(lambda crops: torch.stack([transforms.ToTensor()(crop) for crop in crops])),
+        #
+        #     transforms.Resize(fin_scale),
+        #     transforms.ToTensor(),
+        #     transforms.Normalize(mean=imagenet_mean,
+        #                          std=imagenet_std)
+        # ])
+
+        # init_transform = transforms.Compose([
+        #     transforms.Resize(299),
+        #     transforms.CenterCrop(299),
+        #     transforms.RandomCrop(7),
+        #     transforms.Resize(fin_scale),
+        #     transforms.ToTensor(),
+        #     transforms.Normalize(mean=imagenet_mean,
+        #                          std=imagenet_std)
+        # ])
 
         self.transforms = {
             'train': init_transform,
@@ -38,7 +61,7 @@ class DataSetDTD(object):
 
         self.dataset = {
             'train': dsets.ImageFolder(root=os.path.join(path_data, 'train'),
-                                       transform=self.transforms['val'],
+                                       transform=self.transforms['train'],
                                        target_transform=None),
             'val': dsets.ImageFolder(root=os.path.join(path_data, 'test'),
                                      transform=self.transforms['val'],
