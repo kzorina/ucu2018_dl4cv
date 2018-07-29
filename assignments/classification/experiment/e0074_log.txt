@@ -1,0 +1,26 @@
+2018-07-29 18:35:32.222890
+
+==== PARAMETERS:
+MODEL: 
+  name: vgg19
+seed: 42
+TRAIN: 
+  resume: 
+  momentum: 0.9
+  epochs: 20
+  lr: 0.001
+with_cuda: True
+path_save: experiments/
+device: cuda
+experiment_name: e0074
+DATASET: 
+  name: fashion
+  download: False
+  path: data/deepfashion
+  batch_size_val: 64
+  batch_size: 32
+LOG: 
+  iter_interval: 10
+  path: experiments/
+  visdom: False
+

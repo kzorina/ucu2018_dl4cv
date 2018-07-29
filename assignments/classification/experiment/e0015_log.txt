@@ -1,0 +1,342 @@
+2018-07-26 13:27:19.998595
+
+==== PARAMETERS:
+experiment_name: e0015
+seed: 42
+with_cuda: True
+path_save: experiments/
+TRAIN: 
+  resume: 
+  epochs: 30
+  lr: 0.001
+  momentum: 0.9
+MODEL: 
+  name: lenet_in3x32x32_out10
+DATASET: 
+  name: fashion
+  path: data/deepfashion
+  batch_size: 32
+  batch_size_val: 64
+  download: False
+LOG: 
+  iter_interval: 10
+  path: experiments/
+  visdom: True
+device: cpu
+
+
+==== NET MODEL:
+LeNet3x32x32(
+  (conv1): Conv2d(3, 6, kernel_size=(5, 5), stride=(1, 1))
+  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (conv2): Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
+  (fc1): Linear(in_features=400, out_features=120, bias=True)
+  (fc2): Linear(in_features=120, out_features=84, bias=True)
+  (fc3): Linear(in_features=84, out_features=6, bias=True)
+)
+==== OPTIMIZER:
+SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0.9
+    nesterov: False
+    weight_decay: 0
+)
+
+Epoch[0] Iteration[0/2951] Loss: 1.80 Time: 00:00:00:04
+Epoch[0] Iteration[10/2951] Loss: 1.81 Time: 00:00:00:05
+Epoch[0] Iteration[20/2951] Loss: 1.77 Time: 00:00:00:05
+Epoch[0] Iteration[30/2951] Loss: 1.75 Time: 00:00:00:05
+Epoch[0] Iteration[40/2951] Loss: 1.71 Time: 00:00:00:06
+Epoch[0] Iteration[50/2951] Loss: 1.70 Time: 00:00:00:06
+Epoch[0] Iteration[60/2951] Loss: 1.70 Time: 00:00:00:07
+Epoch[0] Iteration[70/2951] Loss: 1.63 Time: 00:00:00:07
+Epoch[0] Iteration[80/2951] Loss: 1.65 Time: 00:00:00:07
+Epoch[0] Iteration[90/2951] Loss: 1.59 Time: 00:00:00:08
+Epoch[0] Iteration[100/2951] Loss: 1.58 Time: 00:00:00:08
+Epoch[0] Iteration[110/2951] Loss: 1.50 Time: 00:00:00:09
+Epoch[0] Iteration[120/2951] Loss: 1.46 Time: 00:00:00:09
+Epoch[0] Iteration[130/2951] Loss: 1.45 Time: 00:00:00:10
+Epoch[0] Iteration[140/2951] Loss: 1.47 Time: 00:00:00:10
+Epoch[0] Iteration[150/2951] Loss: 1.49 Time: 00:00:00:10
+Epoch[0] Iteration[160/2951] Loss: 1.38 Time: 00:00:00:11
+Epoch[0] Iteration[170/2951] Loss: 1.31 Time: 00:00:00:11
+Epoch[0] Iteration[180/2951] Loss: 1.34 Time: 00:00:00:12
+Epoch[0] Iteration[190/2951] Loss: 1.23 Time: 00:00:00:12
+Epoch[0] Iteration[200/2951] Loss: 1.41 Time: 00:00:00:12
+Epoch[0] Iteration[210/2951] Loss: 1.51 Time: 00:00:00:13
+Epoch[0] Iteration[220/2951] Loss: 1.43 Time: 00:00:00:13
+Epoch[0] Iteration[230/2951] Loss: 1.35 Time: 00:00:00:14
+Epoch[0] Iteration[240/2951] Loss: 1.24 Time: 00:00:00:14
+Epoch[0] Iteration[250/2951] Loss: 1.28 Time: 00:00:00:15
+Epoch[0] Iteration[260/2951] Loss: 1.22 Time: 00:00:00:15
+Epoch[0] Iteration[270/2951] Loss: 1.32 Time: 00:00:00:15
+Epoch[0] Iteration[280/2951] Loss: 1.32 Time: 00:00:00:16
+Epoch[0] Iteration[290/2951] Loss: 1.48 Time: 00:00:00:16
+Epoch[0] Iteration[300/2951] Loss: 1.32 Time: 00:00:00:17
+Epoch[0] Iteration[310/2951] Loss: 1.42 Time: 00:00:00:17
+Epoch[0] Iteration[320/2951] Loss: 1.22 Time: 00:00:00:17
+Epoch[0] Iteration[330/2951] Loss: 1.47 Time: 00:00:00:18
+Epoch[0] Iteration[340/2951] Loss: 1.41 Time: 00:00:00:18
+Epoch[0] Iteration[350/2951] Loss: 1.25 Time: 00:00:00:19
+Epoch[0] Iteration[360/2951] Loss: 1.61 Time: 00:00:00:19
+Epoch[0] Iteration[370/2951] Loss: 1.39 Time: 00:00:00:19
+Epoch[0] Iteration[380/2951] Loss: 1.47 Time: 00:00:00:20
+Epoch[0] Iteration[390/2951] Loss: 1.51 Time: 00:00:00:20
+Epoch[0] Iteration[400/2951] Loss: 1.37 Time: 00:00:00:21
+Epoch[0] Iteration[410/2951] Loss: 1.19 Time: 00:00:00:21
+Epoch[0] Iteration[420/2951] Loss: 1.35 Time: 00:00:00:22
+Epoch[0] Iteration[430/2951] Loss: 1.37 Time: 00:00:00:22
+Epoch[0] Iteration[440/2951] Loss: 1.39 Time: 00:00:00:22
+Epoch[0] Iteration[450/2951] Loss: 1.48 Time: 00:00:00:23
+Epoch[0] Iteration[460/2951] Loss: 1.03 Time: 00:00:00:23
+Epoch[0] Iteration[470/2951] Loss: 1.27 Time: 00:00:00:24
+Epoch[0] Iteration[480/2951] Loss: 1.46 Time: 00:00:00:24
+Epoch[0] Iteration[490/2951] Loss: 1.01 Time: 00:00:00:25
+Epoch[0] Iteration[500/2951] Loss: 1.28 Time: 00:00:00:25
+Epoch[0] Iteration[510/2951] Loss: 1.30 Time: 00:00:00:25
+Epoch[0] Iteration[520/2951] Loss: 1.18 Time: 00:00:00:26
+Epoch[0] Iteration[530/2951] Loss: 1.20 Time: 00:00:00:26
+Epoch[0] Iteration[540/2951] Loss: 1.22 Time: 00:00:00:27
+Epoch[0] Iteration[550/2951] Loss: 1.41 Time: 00:00:00:27
+Epoch[0] Iteration[560/2951] Loss: 1.09 Time: 00:00:00:28
+Epoch[0] Iteration[570/2951] Loss: 1.30 Time: 00:00:00:28
+Epoch[0] Iteration[580/2951] Loss: 1.50 Time: 00:00:00:29
+Epoch[0] Iteration[590/2951] Loss: 1.18 Time: 00:00:00:29
+Epoch[0] Iteration[600/2951] Loss: 1.19 Time: 00:00:00:29
+Epoch[0] Iteration[610/2951] Loss: 1.19 Time: 00:00:00:30
+Epoch[0] Iteration[620/2951] Loss: 1.43 Time: 00:00:00:30
+Epoch[0] Iteration[630/2951] Loss: 1.08 Time: 00:00:00:31
+Epoch[0] Iteration[640/2951] Loss: 1.36 Time: 00:00:00:31
+Epoch[0] Iteration[650/2951] Loss: 1.24 Time: 00:00:00:31
+Epoch[0] Iteration[660/2951] Loss: 1.25 Time: 00:00:00:32
+Epoch[0] Iteration[670/2951] Loss: 1.37 Time: 00:00:00:32
+Epoch[0] Iteration[680/2951] Loss: 1.16 Time: 00:00:00:33
+Epoch[0] Iteration[690/2951] Loss: 1.46 Time: 00:00:00:33
+Epoch[0] Iteration[700/2951] Loss: 1.27 Time: 00:00:00:34
+Epoch[0] Iteration[710/2951] Loss: 1.51 Time: 00:00:00:34
+Epoch[0] Iteration[720/2951] Loss: 1.23 Time: 00:00:00:34
+Epoch[0] Iteration[730/2951] Loss: 1.19 Time: 00:00:00:35
+Epoch[0] Iteration[740/2951] Loss: 1.30 Time: 00:00:00:35
+Epoch[0] Iteration[750/2951] Loss: 1.15 Time: 00:00:00:36
+Epoch[0] Iteration[760/2951] Loss: 1.42 Time: 00:00:00:36
+Epoch[0] Iteration[770/2951] Loss: 1.36 Time: 00:00:00:37
+Epoch[0] Iteration[780/2951] Loss: 1.48 Time: 00:00:00:37
+Epoch[0] Iteration[790/2951] Loss: 1.17 Time: 00:00:00:37
+Epoch[0] Iteration[800/2951] Loss: 1.39 Time: 00:00:00:38
+Epoch[0] Iteration[810/2951] Loss: 1.31 Time: 00:00:00:38
+Epoch[0] Iteration[820/2951] Loss: 1.13 Time: 00:00:00:39
+Epoch[0] Iteration[830/2951] Loss: 1.27 Time: 00:00:00:39
+Epoch[0] Iteration[840/2951] Loss: 1.26 Time: 00:00:00:39
+Epoch[0] Iteration[850/2951] Loss: 1.15 Time: 00:00:00:40
+Epoch[0] Iteration[860/2951] Loss: 1.31 Time: 00:00:00:40
+Epoch[0] Iteration[870/2951] Loss: 1.41 Time: 00:00:00:41
+Epoch[0] Iteration[880/2951] Loss: 1.10 Time: 00:00:00:41
+Epoch[0] Iteration[890/2951] Loss: 1.54 Time: 00:00:00:42
+Epoch[0] Iteration[900/2951] Loss: 1.34 Time: 00:00:00:42
+Epoch[0] Iteration[910/2951] Loss: 1.14 Time: 00:00:00:43
+Epoch[0] Iteration[920/2951] Loss: 1.20 Time: 00:00:00:43
+Epoch[0] Iteration[930/2951] Loss: 1.16 Time: 00:00:00:43
+Epoch[0] Iteration[940/2951] Loss: 1.20 Time: 00:00:00:44
+Epoch[0] Iteration[950/2951] Loss: 1.19 Time: 00:00:00:45
+Epoch[0] Iteration[960/2951] Loss: 1.20 Time: 00:00:00:46
+Epoch[0] Iteration[970/2951] Loss: 1.41 Time: 00:00:00:46
+Epoch[0] Iteration[980/2951] Loss: 1.34 Time: 00:00:00:47
+Epoch[0] Iteration[990/2951] Loss: 1.09 Time: 00:00:00:47
+Epoch[0] Iteration[1000/2951] Loss: 1.16 Time: 00:00:00:47
+Epoch[0] Iteration[1010/2951] Loss: 1.09 Time: 00:00:00:48
+Epoch[0] Iteration[1020/2951] Loss: 1.23 Time: 00:00:00:49
+Epoch[0] Iteration[1030/2951] Loss: 1.27 Time: 00:00:00:49
+Epoch[0] Iteration[1040/2951] Loss: 1.27 Time: 00:00:00:49
+Epoch[0] Iteration[1050/2951] Loss: 1.06 Time: 00:00:00:50
+Epoch[0] Iteration[1060/2951] Loss: 1.61 Time: 00:00:00:50
+Epoch[0] Iteration[1070/2951] Loss: 1.28 Time: 00:00:00:51
+Epoch[0] Iteration[1080/2951] Loss: 1.33 Time: 00:00:00:51
+Epoch[0] Iteration[1090/2951] Loss: 1.28 Time: 00:00:00:51
+Epoch[0] Iteration[1100/2951] Loss: 1.04 Time: 00:00:00:52
+Epoch[0] Iteration[1110/2951] Loss: 1.27 Time: 00:00:00:52
+Epoch[0] Iteration[1120/2951] Loss: 1.21 Time: 00:00:00:53
+Epoch[0] Iteration[1130/2951] Loss: 1.13 Time: 00:00:00:53
+Epoch[0] Iteration[1140/2951] Loss: 1.37 Time: 00:00:00:54
+Epoch[0] Iteration[1150/2951] Loss: 1.31 Time: 00:00:00:54
+Epoch[0] Iteration[1160/2951] Loss: 0.94 Time: 00:00:00:55
+Epoch[0] Iteration[1170/2951] Loss: 1.33 Time: 00:00:00:55
+Epoch[0] Iteration[1180/2951] Loss: 1.33 Time: 00:00:00:56
+Epoch[0] Iteration[1190/2951] Loss: 1.09 Time: 00:00:00:56
+Epoch[0] Iteration[1200/2951] Loss: 1.09 Time: 00:00:00:57
+Epoch[0] Iteration[1210/2951] Loss: 1.66 Time: 00:00:00:57
+Epoch[0] Iteration[1220/2951] Loss: 1.41 Time: 00:00:00:57
+Epoch[0] Iteration[1230/2951] Loss: 1.24 Time: 00:00:00:58
+Epoch[0] Iteration[1240/2951] Loss: 1.21 Time: 00:00:00:58
+Epoch[0] Iteration[1250/2951] Loss: 1.47 Time: 00:00:00:59
+Epoch[0] Iteration[1260/2951] Loss: 1.12 Time: 00:00:00:59
+Epoch[0] Iteration[1270/2951] Loss: 1.41 Time: 00:00:01:00
+Epoch[0] Iteration[1280/2951] Loss: 0.91 Time: 00:00:01:00
+Epoch[0] Iteration[1290/2951] Loss: 1.23 Time: 00:00:01:00
+Epoch[0] Iteration[1300/2951] Loss: 1.08 Time: 00:00:01:01
+Epoch[0] Iteration[1310/2951] Loss: 1.32 Time: 00:00:01:01
+Epoch[0] Iteration[1320/2951] Loss: 1.00 Time: 00:00:01:02
+Epoch[0] Iteration[1330/2951] Loss: 1.11 Time: 00:00:01:02
+Epoch[0] Iteration[1340/2951] Loss: 1.22 Time: 00:00:01:03
+Epoch[0] Iteration[1350/2951] Loss: 1.12 Time: 00:00:01:03
+Epoch[0] Iteration[1360/2951] Loss: 1.22 Time: 00:00:01:03
+Epoch[0] Iteration[1370/2951] Loss: 0.94 Time: 00:00:01:04
+Epoch[0] Iteration[1380/2951] Loss: 0.94 Time: 00:00:01:04
+Epoch[0] Iteration[1390/2951] Loss: 0.94 Time: 00:00:01:05
+Epoch[0] Iteration[1400/2951] Loss: 1.48 Time: 00:00:01:11
+Epoch[0] Iteration[1410/2951] Loss: 1.27 Time: 00:00:01:12
+Epoch[0] Iteration[1420/2951] Loss: 1.08 Time: 00:00:01:12
+Epoch[0] Iteration[1430/2951] Loss: 1.10 Time: 00:00:01:12
+Epoch[0] Iteration[1440/2951] Loss: 1.14 Time: 00:00:01:13
+Epoch[0] Iteration[1450/2951] Loss: 0.91 Time: 00:00:01:14
+Epoch[0] Iteration[1460/2951] Loss: 1.28 Time: 00:00:01:14
+Epoch[0] Iteration[1470/2951] Loss: 0.98 Time: 00:00:01:14
+Epoch[0] Iteration[1480/2951] Loss: 1.17 Time: 00:00:01:15
+Epoch[0] Iteration[1490/2951] Loss: 1.27 Time: 00:00:01:15
+Epoch[0] Iteration[1500/2951] Loss: 0.81 Time: 00:00:01:16
+Epoch[0] Iteration[1510/2951] Loss: 1.09 Time: 00:00:01:16
+Epoch[0] Iteration[1520/2951] Loss: 1.08 Time: 00:00:01:17
+Epoch[0] Iteration[1530/2951] Loss: 0.99 Time: 00:00:01:17
+Epoch[0] Iteration[1540/2951] Loss: 0.78 Time: 00:00:01:17
+Epoch[0] Iteration[1550/2951] Loss: 1.31 Time: 00:00:01:18
+Epoch[0] Iteration[1560/2951] Loss: 1.08 Time: 00:00:01:18
+Epoch[0] Iteration[1570/2951] Loss: 1.03 Time: 00:00:01:19
+Epoch[0] Iteration[1580/2951] Loss: 1.29 Time: 00:00:01:19
+Epoch[0] Iteration[1590/2951] Loss: 1.06 Time: 00:00:01:19
+Epoch[0] Iteration[1600/2951] Loss: 1.28 Time: 00:00:01:20
+Epoch[0] Iteration[1610/2951] Loss: 1.14 Time: 00:00:01:20
+Epoch[0] Iteration[1620/2951] Loss: 1.11 Time: 00:00:01:21
+Epoch[0] Iteration[1630/2951] Loss: 1.25 Time: 00:00:01:21
+Epoch[0] Iteration[1640/2951] Loss: 1.05 Time: 00:00:01:22
+Epoch[0] Iteration[1650/2951] Loss: 0.97 Time: 00:00:01:22
+Epoch[0] Iteration[1660/2951] Loss: 1.02 Time: 00:00:01:22
+Epoch[0] Iteration[1670/2951] Loss: 0.87 Time: 00:00:01:23
+Epoch[0] Iteration[1680/2951] Loss: 1.15 Time: 00:00:01:23
+Epoch[0] Iteration[1690/2951] Loss: 0.84 Time: 00:00:01:24
+Epoch[0] Iteration[1700/2951] Loss: 1.37 Time: 00:00:01:24
+Epoch[0] Iteration[1710/2951] Loss: 0.98 Time: 00:00:01:25
+Epoch[0] Iteration[1720/2951] Loss: 1.27 Time: 00:00:01:25
+Epoch[0] Iteration[1730/2951] Loss: 1.06 Time: 00:00:01:25
+Epoch[0] Iteration[1740/2951] Loss: 0.93 Time: 00:00:01:26
+Epoch[0] Iteration[1750/2951] Loss: 0.99 Time: 00:00:01:26
+Epoch[0] Iteration[1760/2951] Loss: 0.93 Time: 00:00:01:27
+Epoch[0] Iteration[1770/2951] Loss: 1.38 Time: 00:00:01:27
+Epoch[0] Iteration[1780/2951] Loss: 1.06 Time: 00:00:01:28
+Epoch[0] Iteration[1790/2951] Loss: 1.11 Time: 00:00:01:28
+Epoch[0] Iteration[1800/2951] Loss: 1.14 Time: 00:00:01:29
+Epoch[0] Iteration[1810/2951] Loss: 1.13 Time: 00:00:01:29
+Epoch[0] Iteration[1820/2951] Loss: 0.90 Time: 00:00:01:29
+Epoch[0] Iteration[1830/2951] Loss: 0.89 Time: 00:00:01:30
+Epoch[0] Iteration[1840/2951] Loss: 0.77 Time: 00:00:01:30
+Epoch[0] Iteration[1850/2951] Loss: 1.03 Time: 00:00:01:31
+Epoch[0] Iteration[1860/2951] Loss: 0.84 Time: 00:00:01:31
+Epoch[0] Iteration[1870/2951] Loss: 0.90 Time: 00:00:01:32
+Epoch[0] Iteration[1880/2951] Loss: 1.35 Time: 00:00:01:33
+Epoch[0] Iteration[1890/2951] Loss: 0.83 Time: 00:00:01:33
+Epoch[0] Iteration[1900/2951] Loss: 1.28 Time: 00:00:01:34
+Epoch[0] Iteration[1910/2951] Loss: 0.93 Time: 00:00:01:34
+Epoch[0] Iteration[1920/2951] Loss: 0.88 Time: 00:00:01:35
+Epoch[0] Iteration[1930/2951] Loss: 0.79 Time: 00:00:01:35
+Epoch[0] Iteration[1940/2951] Loss: 0.87 Time: 00:00:01:36
+Epoch[0] Iteration[1950/2951] Loss: 1.28 Time: 00:00:01:37
+Epoch[0] Iteration[1960/2951] Loss: 1.15 Time: 00:00:01:37
+Epoch[0] Iteration[1970/2951] Loss: 0.88 Time: 00:00:01:38
+Epoch[0] Iteration[1980/2951] Loss: 1.10 Time: 00:00:01:39
+Epoch[0] Iteration[1990/2951] Loss: 0.95 Time: 00:00:01:40
+Epoch[0] Iteration[2000/2951] Loss: 1.05 Time: 00:00:01:41
+Epoch[0] Iteration[2010/2951] Loss: 1.09 Time: 00:00:01:42
+Epoch[0] Iteration[2020/2951] Loss: 0.76 Time: 00:00:01:43
+Epoch[0] Iteration[2030/2951] Loss: 1.03 Time: 00:00:01:44
+Epoch[0] Iteration[2040/2951] Loss: 1.40 Time: 00:00:01:45
+Epoch[0] Iteration[2050/2951] Loss: 1.00 Time: 00:00:01:46
+Epoch[0] Iteration[2060/2951] Loss: 0.98 Time: 00:00:01:46
+Epoch[0] Iteration[2070/2951] Loss: 0.87 Time: 00:00:01:47
+Epoch[0] Iteration[2080/2951] Loss: 0.81 Time: 00:00:01:47
+Epoch[0] Iteration[2090/2951] Loss: 0.84 Time: 00:00:01:48
+Epoch[0] Iteration[2100/2951] Loss: 0.96 Time: 00:00:01:49
+Epoch[0] Iteration[2110/2951] Loss: 1.18 Time: 00:00:01:50
+Epoch[0] Iteration[2120/2951] Loss: 1.02 Time: 00:00:01:51
+Epoch[0] Iteration[2130/2951] Loss: 1.17 Time: 00:00:01:51
+Epoch[0] Iteration[2140/2951] Loss: 0.91 Time: 00:00:01:52
+Epoch[0] Iteration[2150/2951] Loss: 1.20 Time: 00:00:01:53
+Epoch[0] Iteration[2160/2951] Loss: 0.98 Time: 00:00:01:54
+Epoch[0] Iteration[2170/2951] Loss: 0.80 Time: 00:00:01:55
+Epoch[0] Iteration[2180/2951] Loss: 1.11 Time: 00:00:01:55
+Epoch[0] Iteration[2190/2951] Loss: 1.13 Time: 00:00:01:56
+Epoch[0] Iteration[2200/2951] Loss: 1.16 Time: 00:00:01:56
+Epoch[0] Iteration[2210/2951] Loss: 1.12 Time: 00:00:01:57
+Epoch[0] Iteration[2220/2951] Loss: 0.83 Time: 00:00:01:57
+Epoch[0] Iteration[2230/2951] Loss: 0.93 Time: 00:00:01:58
+Epoch[0] Iteration[2240/2951] Loss: 0.89 Time: 00:00:01:59
+Epoch[0] Iteration[2250/2951] Loss: 0.81 Time: 00:00:01:59
+Epoch[0] Iteration[2260/2951] Loss: 1.01 Time: 00:00:02:00
+Epoch[0] Iteration[2270/2951] Loss: 1.08 Time: 00:00:02:00
+Epoch[0] Iteration[2280/2951] Loss: 1.16 Time: 00:00:02:01
+Epoch[0] Iteration[2290/2951] Loss: 0.93 Time: 00:00:02:02
+Epoch[0] Iteration[2300/2951] Loss: 1.00 Time: 00:00:02:02
+Epoch[0] Iteration[2310/2951] Loss: 0.89 Time: 00:00:02:03
+Epoch[0] Iteration[2320/2951] Loss: 1.24 Time: 00:00:02:03
+Epoch[0] Iteration[2330/2951] Loss: 1.07 Time: 00:00:02:04
+Epoch[0] Iteration[2340/2951] Loss: 1.02 Time: 00:00:02:05
+Epoch[0] Iteration[2350/2951] Loss: 1.08 Time: 00:00:02:05
+Epoch[0] Iteration[2360/2951] Loss: 0.89 Time: 00:00:02:06
+Epoch[0] Iteration[2370/2951] Loss: 0.99 Time: 00:00:02:06
+Epoch[0] Iteration[2380/2951] Loss: 0.75 Time: 00:00:02:07
+Epoch[0] Iteration[2390/2951] Loss: 0.63 Time: 00:00:02:08
+Epoch[0] Iteration[2400/2951] Loss: 1.14 Time: 00:00:02:08
+Epoch[0] Iteration[2410/2951] Loss: 1.15 Time: 00:00:02:09
+Epoch[0] Iteration[2420/2951] Loss: 1.02 Time: 00:00:02:09
+Epoch[0] Iteration[2430/2951] Loss: 0.84 Time: 00:00:02:10
+Epoch[0] Iteration[2440/2951] Loss: 0.76 Time: 00:00:02:11
+Epoch[0] Iteration[2450/2951] Loss: 1.26 Time: 00:00:02:11
+Epoch[0] Iteration[2460/2951] Loss: 0.98 Time: 00:00:02:12
+Epoch[0] Iteration[2470/2951] Loss: 1.16 Time: 00:00:02:12
+Epoch[0] Iteration[2480/2951] Loss: 1.12 Time: 00:00:02:13
+Epoch[0] Iteration[2490/2951] Loss: 0.84 Time: 00:00:02:13
+Epoch[0] Iteration[2500/2951] Loss: 1.20 Time: 00:00:02:14
+Epoch[0] Iteration[2510/2951] Loss: 1.06 Time: 00:00:02:15
+Epoch[0] Iteration[2520/2951] Loss: 0.80 Time: 00:00:02:15
+Epoch[0] Iteration[2530/2951] Loss: 1.28 Time: 00:00:02:16
+Epoch[0] Iteration[2540/2951] Loss: 0.91 Time: 00:00:02:16
+Epoch[0] Iteration[2550/2951] Loss: 0.62 Time: 00:00:02:17
+Epoch[0] Iteration[2560/2951] Loss: 0.68 Time: 00:00:02:17
+Epoch[0] Iteration[2570/2951] Loss: 0.90 Time: 00:00:02:18
+Epoch[0] Iteration[2580/2951] Loss: 0.96 Time: 00:00:02:18
+Epoch[0] Iteration[2590/2951] Loss: 0.88 Time: 00:00:02:19
+Epoch[0] Iteration[2600/2951] Loss: 0.87 Time: 00:00:02:19
+Epoch[0] Iteration[2610/2951] Loss: 0.96 Time: 00:00:02:20
+Epoch[0] Iteration[2620/2951] Loss: 0.60 Time: 00:00:02:21
+Epoch[0] Iteration[2630/2951] Loss: 1.02 Time: 00:00:02:21
+Epoch[0] Iteration[2640/2951] Loss: 0.79 Time: 00:00:02:22
+Epoch[0] Iteration[2650/2951] Loss: 0.63 Time: 00:00:02:23
+Epoch[0] Iteration[2660/2951] Loss: 0.91 Time: 00:00:02:23
+Epoch[0] Iteration[2670/2951] Loss: 1.17 Time: 00:00:02:24
+Epoch[0] Iteration[2680/2951] Loss: 0.84 Time: 00:00:02:25
+Epoch[0] Iteration[2690/2951] Loss: 0.74 Time: 00:00:02:25
+Epoch[0] Iteration[2700/2951] Loss: 0.82 Time: 00:00:02:26
+Epoch[0] Iteration[2710/2951] Loss: 1.02 Time: 00:00:02:27
+Epoch[0] Iteration[2720/2951] Loss: 0.71 Time: 00:00:02:27
+Epoch[0] Iteration[2730/2951] Loss: 0.86 Time: 00:00:02:28
+Epoch[0] Iteration[2740/2951] Loss: 0.74 Time: 00:00:02:29
+Epoch[0] Iteration[2750/2951] Loss: 0.79 Time: 00:00:02:29
+Epoch[0] Iteration[2760/2951] Loss: 0.99 Time: 00:00:02:30
+Epoch[0] Iteration[2770/2951] Loss: 1.06 Time: 00:00:02:30
+Epoch[0] Iteration[2780/2951] Loss: 0.99 Time: 00:00:02:31
+Epoch[0] Iteration[2790/2951] Loss: 0.83 Time: 00:00:02:31
+Epoch[0] Iteration[2800/2951] Loss: 0.57 Time: 00:00:02:32
+Epoch[0] Iteration[2810/2951] Loss: 0.83 Time: 00:00:02:33
+Epoch[0] Iteration[2820/2951] Loss: 0.87 Time: 00:00:02:33
+Epoch[0] Iteration[2830/2951] Loss: 0.62 Time: 00:00:02:34
+Epoch[0] Iteration[2840/2951] Loss: 0.83 Time: 00:00:02:34
+Epoch[0] Iteration[2850/2951] Loss: 1.15 Time: 00:00:02:35
+Epoch[0] Iteration[2860/2951] Loss: 0.96 Time: 00:00:02:36
+Epoch[0] Iteration[2870/2951] Loss: 0.84 Time: 00:00:02:37
+Epoch[0] Iteration[2880/2951] Loss: 0.85 Time: 00:00:02:38
+Epoch[0] Iteration[2890/2951] Loss: 0.70 Time: 00:00:02:38
+Epoch[0] Iteration[2900/2951] Loss: 1.09 Time: 00:00:02:39
+Epoch[0] Iteration[2910/2951] Loss: 1.12 Time: 00:00:02:40
+Epoch[0] Iteration[2920/2951] Loss: 0.81 Time: 00:00:02:40
+Epoch[0] Iteration[2930/2951] Loss: 0.79 Time: 00:00:02:41
+Epoch[0] Iteration[2940/2951] Loss: 0.80 Time: 00:00:02:42
+Epoch[0] Iteration[2950/2951] Loss: 1.17 Time: 00:00:02:42

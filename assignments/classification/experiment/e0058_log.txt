@@ -1,0 +1,46 @@
+2018-07-29 13:26:32.945670
+
+==== PARAMETERS:
+MODEL: 
+  name: lenet_in3x32x32_out10
+with_cuda: True
+TRAIN: 
+  resume: 
+  epochs: 20
+  lr: 0.001
+  momentum: 0.9
+device: cuda
+seed: 42
+DATASET: 
+  download: False
+  batch_size_val: 64
+  path: data/deepfashion
+  name: fashion
+  batch_size: 32
+experiment_name: e0058
+path_save: experiments/
+LOG: 
+  path: experiments/
+  iter_interval: 10
+  visdom: False
+
+
+==== NET MODEL:
+LeNet3x32x32(
+  (conv1): Conv2d(3, 6, kernel_size=(5, 5), stride=(1, 1))
+  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (conv2): Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
+  (fc1): Linear(in_features=400, out_features=120, bias=True)
+  (fc2): Linear(in_features=120, out_features=84, bias=True)
+  (fc3): Linear(in_features=84, out_features=6, bias=True)
+)
+==== OPTIMIZER:
+SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0.9
+    nesterov: False
+    weight_decay: 0
+)
+

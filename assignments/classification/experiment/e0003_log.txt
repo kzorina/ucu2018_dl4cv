@@ -1,0 +1,136 @@
+2018-07-03 17:07:59.545047
+
+==== PARAMETERS:
+experiment_name: e0003
+seed: 42
+with_cuda: True
+path_save: experiments/
+TRAIN: 
+  resume: 
+  epochs: 30
+  lr: 0.001
+  momentum: 0.9
+MODEL: 
+  name: lenet_in3x32x32_out10
+DATASET: 
+  name: fashion
+  path: data/fashion
+  batch_size: 32
+  batch_size_val: 64
+  download: False
+LOG: 
+  iter_interval: 10
+  path: experiments/
+  visdom: True
+device: cpu
+
+
+==== NET MODEL:
+LeNet3x32x32(
+  (conv1): Conv2d(3, 6, kernel_size=(5, 5), stride=(1, 1))
+  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (conv2): Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
+  (fc1): Linear(in_features=400, out_features=120, bias=True)
+  (fc2): Linear(in_features=120, out_features=84, bias=True)
+  (fc3): Linear(in_features=84, out_features=10, bias=True)
+)
+==== OPTIMIZER:
+SGD (
+Parameter Group 0
+    dampening: 0
+    lr: 0.001
+    momentum: 0.9
+    nesterov: False
+    weight_decay: 0
+)
+
+Epoch[0] Iteration[0/18] Loss: 2.30 Time: 00:00:00:04
+Epoch[0] Iteration[10/18] Loss: 2.27 Time: 00:00:00:06
+Epoch: 1  Train Avg accuracy: 23.75 Train  Avg loss: 2.27 Validation Avg accuracy: 25.00 Validation Avg loss: 2.26 Time: 00:00:00:18 BEST MODEL SAVED
+Epoch[1] Iteration[0/18] Loss: 2.26 Time: 00:00:00:22
+Epoch[1] Iteration[10/18] Loss: 2.25 Time: 00:00:00:29
+Epoch: 2  Train Avg accuracy: 27.86 Train  Avg loss: 2.21 Validation Avg accuracy: 26.25 Validation Avg loss: 2.21 Time: 00:00:01:03 BEST MODEL SAVED
+Epoch[2] Iteration[0/18] Loss: 2.21 Time: 00:00:01:10
+Epoch[2] Iteration[10/18] Loss: 2.18 Time: 00:00:01:15
+Epoch: 3  Train Avg accuracy: 30.89 Train  Avg loss: 2.15 Validation Avg accuracy: 27.50 Validation Avg loss: 2.15 Time: 00:00:01:33 BEST MODEL SAVED
+Epoch[3] Iteration[0/18] Loss: 2.14 Time: 00:00:01:38
+Epoch[3] Iteration[10/18] Loss: 2.11 Time: 00:00:01:40
+Epoch: 4  Train Avg accuracy: 33.93 Train  Avg loss: 2.04 Validation Avg accuracy: 27.92 Validation Avg loss: 2.05 Time: 00:00:01:53 BEST MODEL SAVED
+Epoch[4] Iteration[0/18] Loss: 2.04 Time: 00:00:01:57
+Epoch[4] Iteration[10/18] Loss: 1.96 Time: 00:00:02:00
+Epoch: 5  Train Avg accuracy: 35.89 Train  Avg loss: 1.84 Validation Avg accuracy: 33.75 Validation Avg loss: 1.84 Time: 00:00:02:13 BEST MODEL SAVED
+Epoch[5] Iteration[0/18] Loss: 1.81 Time: 00:00:02:17
+Epoch[5] Iteration[10/18] Loss: 1.67 Time: 00:00:02:19
+Epoch: 6  Train Avg accuracy: 26.96 Train  Avg loss: 1.52 Validation Avg accuracy: 25.83 Validation Avg loss: 1.53 Time: 00:00:02:32
+Epoch[6] Iteration[0/18] Loss: 1.52 Time: 00:00:02:37
+Epoch[6] Iteration[10/18] Loss: 1.46 Time: 00:00:02:39
+Epoch: 7  Train Avg accuracy: 33.93 Train  Avg loss: 1.38 Validation Avg accuracy: 35.83 Validation Avg loss: 1.39 Time: 00:00:02:58 BEST MODEL SAVED
+Epoch[7] Iteration[0/18] Loss: 1.36 Time: 00:00:03:04
+Epoch[7] Iteration[10/18] Loss: 1.32 Time: 00:00:03:07
+Epoch: 8  Train Avg accuracy: 38.39 Train  Avg loss: 1.34 Validation Avg accuracy: 35.83 Validation Avg loss: 1.35 Time: 00:00:03:25
+Epoch[8] Iteration[0/18] Loss: 1.39 Time: 00:00:03:31
+Epoch[8] Iteration[10/18] Loss: 1.34 Time: 00:00:03:34
+Epoch: 9  Train Avg accuracy: 35.54 Train  Avg loss: 1.35 Validation Avg accuracy: 35.42 Validation Avg loss: 1.36 Time: 00:00:03:53
+Epoch[9] Iteration[0/18] Loss: 1.36 Time: 00:00:03:59
+Epoch[9] Iteration[10/18] Loss: 1.42 Time: 00:00:04:03
+Epoch: 10  Train Avg accuracy: 38.75 Train  Avg loss: 1.30 Validation Avg accuracy: 36.25 Validation Avg loss: 1.32 Time: 00:00:04:20 BEST MODEL SAVED
+Epoch[10] Iteration[0/18] Loss: 1.26 Time: 00:00:04:27
+Epoch[10] Iteration[10/18] Loss: 1.39 Time: 00:00:04:31
+Epoch: 11  Train Avg accuracy: 40.00 Train  Avg loss: 1.30 Validation Avg accuracy: 35.83 Validation Avg loss: 1.34 Time: 00:00:04:48
+Epoch[11] Iteration[0/18] Loss: 1.30 Time: 00:00:04:55
+Epoch[11] Iteration[10/18] Loss: 1.36 Time: 00:00:04:59
+Epoch: 12  Train Avg accuracy: 43.57 Train  Avg loss: 1.29 Validation Avg accuracy: 40.83 Validation Avg loss: 1.34 Time: 00:00:05:19 BEST MODEL SAVED
+Epoch[12] Iteration[0/18] Loss: 1.26 Time: 00:00:05:25
+Epoch[12] Iteration[10/18] Loss: 1.41 Time: 00:00:05:28
+Epoch: 13  Train Avg accuracy: 38.21 Train  Avg loss: 1.29 Validation Avg accuracy: 33.33 Validation Avg loss: 1.34 Time: 00:00:05:48
+Epoch[13] Iteration[0/18] Loss: 1.11 Time: 00:00:05:56
+Epoch[13] Iteration[10/18] Loss: 1.30 Time: 00:00:06:00
+Epoch: 14  Train Avg accuracy: 46.25 Train  Avg loss: 1.24 Validation Avg accuracy: 39.58 Validation Avg loss: 1.29 Time: 00:00:06:19
+Epoch[14] Iteration[0/18] Loss: 1.11 Time: 00:00:06:25
+Epoch[14] Iteration[10/18] Loss: 1.15 Time: 00:00:06:29
+Epoch: 15  Train Avg accuracy: 40.18 Train  Avg loss: 1.27 Validation Avg accuracy: 39.58 Validation Avg loss: 1.34 Time: 00:00:06:47
+Epoch[15] Iteration[0/18] Loss: 1.33 Time: 00:00:06:54
+Epoch[15] Iteration[10/18] Loss: 1.24 Time: 00:00:06:58
+Epoch: 16  Train Avg accuracy: 40.89 Train  Avg loss: 1.27 Validation Avg accuracy: 40.42 Validation Avg loss: 1.35 Time: 00:00:07:16
+Epoch[16] Iteration[0/18] Loss: 1.21 Time: 00:00:07:22
+Epoch[16] Iteration[10/18] Loss: 1.29 Time: 00:00:07:26
+Epoch: 17  Train Avg accuracy: 45.00 Train  Avg loss: 1.21 Validation Avg accuracy: 43.75 Validation Avg loss: 1.29 Time: 00:00:07:42 BEST MODEL SAVED
+Epoch[17] Iteration[0/18] Loss: 1.22 Time: 00:00:07:47
+Epoch[17] Iteration[10/18] Loss: 1.36 Time: 00:00:07:51
+Epoch: 18  Train Avg accuracy: 46.43 Train  Avg loss: 1.21 Validation Avg accuracy: 42.08 Validation Avg loss: 1.29 Time: 00:00:08:06
+Epoch[18] Iteration[0/18] Loss: 1.16 Time: 00:00:08:13
+Epoch[18] Iteration[10/18] Loss: 1.21 Time: 00:00:08:17
+Epoch: 19  Train Avg accuracy: 48.04 Train  Avg loss: 1.21 Validation Avg accuracy: 43.33 Validation Avg loss: 1.30 Time: 00:00:08:33
+Epoch[19] Iteration[0/18] Loss: 1.29 Time: 00:00:08:39
+Epoch[19] Iteration[10/18] Loss: 1.23 Time: 00:00:08:42
+Epoch: 20  Train Avg accuracy: 47.68 Train  Avg loss: 1.18 Validation Avg accuracy: 42.92 Validation Avg loss: 1.28 Time: 00:00:09:00
+Epoch[20] Iteration[0/18] Loss: 1.30 Time: 00:00:09:06
+Epoch[20] Iteration[10/18] Loss: 1.26 Time: 00:00:09:09
+Epoch: 21  Train Avg accuracy: 46.79 Train  Avg loss: 1.20 Validation Avg accuracy: 44.17 Validation Avg loss: 1.30 Time: 00:00:09:27 BEST MODEL SAVED
+Epoch[21] Iteration[0/18] Loss: 1.17 Time: 00:00:09:34
+Epoch[21] Iteration[10/18] Loss: 1.34 Time: 00:00:09:37
+Epoch: 22  Train Avg accuracy: 46.79 Train  Avg loss: 1.19 Validation Avg accuracy: 43.33 Validation Avg loss: 1.29 Time: 00:00:09:55
+Epoch[22] Iteration[0/18] Loss: 1.17 Time: 00:00:10:01
+Epoch[22] Iteration[10/18] Loss: 1.18 Time: 00:00:10:04
+Epoch: 23  Train Avg accuracy: 48.93 Train  Avg loss: 1.16 Validation Avg accuracy: 42.92 Validation Avg loss: 1.27 Time: 00:00:10:21
+Epoch[23] Iteration[0/18] Loss: 1.31 Time: 00:00:10:28
+Epoch[23] Iteration[10/18] Loss: 1.21 Time: 00:00:10:31
+Epoch: 24  Train Avg accuracy: 51.43 Train  Avg loss: 1.14 Validation Avg accuracy: 43.75 Validation Avg loss: 1.25 Time: 00:00:10:48
+Epoch[24] Iteration[0/18] Loss: 1.16 Time: 00:00:10:55
+Epoch[24] Iteration[10/18] Loss: 0.97 Time: 00:00:10:58
+Epoch: 25  Train Avg accuracy: 47.32 Train  Avg loss: 1.15 Validation Avg accuracy: 42.92 Validation Avg loss: 1.26 Time: 00:00:11:16
+Epoch[25] Iteration[0/18] Loss: 1.26 Time: 00:00:11:22
+Epoch[25] Iteration[10/18] Loss: 1.10 Time: 00:00:11:25
+Epoch: 26  Train Avg accuracy: 50.36 Train  Avg loss: 1.13 Validation Avg accuracy: 45.42 Validation Avg loss: 1.24 Time: 00:00:11:43 BEST MODEL SAVED
+Epoch[26] Iteration[0/18] Loss: 1.20 Time: 00:00:11:50
+Epoch[26] Iteration[10/18] Loss: 1.22 Time: 00:00:11:54
+Epoch: 27  Train Avg accuracy: 49.11 Train  Avg loss: 1.14 Validation Avg accuracy: 42.50 Validation Avg loss: 1.26 Time: 00:00:12:15
+Epoch[27] Iteration[0/18] Loss: 0.97 Time: 00:00:12:22
+Epoch[27] Iteration[10/18] Loss: 1.16 Time: 00:00:12:26
+Epoch: 28  Train Avg accuracy: 50.18 Train  Avg loss: 1.12 Validation Avg accuracy: 46.25 Validation Avg loss: 1.24 Time: 00:00:12:44 BEST MODEL SAVED
+Epoch[28] Iteration[0/18] Loss: 1.18 Time: 00:00:12:50
+Epoch[28] Iteration[10/18] Loss: 1.26 Time: 00:00:12:53
+Epoch: 29  Train Avg accuracy: 46.79 Train  Avg loss: 1.18 Validation Avg accuracy: 42.08 Validation Avg loss: 1.29 Time: 00:00:13:12
+Epoch[29] Iteration[0/18] Loss: 0.89 Time: 00:00:13:18
+Epoch[29] Iteration[10/18] Loss: 1.05 Time: 00:00:13:21
+Epoch: 30  Train Avg accuracy: 48.93 Train  Avg loss: 1.17 Validation Avg accuracy: 41.25 Validation Avg loss: 1.30 Time: 00:00:13:39

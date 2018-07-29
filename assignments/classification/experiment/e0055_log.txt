@@ -1,0 +1,26 @@
+2018-07-29 14:50:24.259255
+
+==== PARAMETERS:
+experiment_name: e0055
+seed: 42
+with_cuda: True
+path_save: experiments/
+TRAIN: 
+  resume: 
+  epochs: 20
+  lr: 0.001
+  momentum: 0.9
+MODEL: 
+  name: resnet18
+DATASET: 
+  name: fashion
+  path: data/deepfashion
+  batch_size: 32
+  batch_size_val: 64
+  download: False
+LOG: 
+  iter_interval: 10
+  path: experiments/
+  visdom: False
+device: cpu
+

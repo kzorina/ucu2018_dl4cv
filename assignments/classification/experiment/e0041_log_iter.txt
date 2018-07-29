@@ -1,0 +1,2 @@
+  iter           loss   elapsed_time
+     0         6.9329    00:00:02:06

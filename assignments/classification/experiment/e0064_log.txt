@@ -1,0 +1,26 @@
+2018-07-29 13:32:49.452713
+
+==== PARAMETERS:
+path_save: experiments/
+LOG: 
+  path: experiments/
+  iter_interval: 10
+  visdom: False
+MODEL: 
+  name: lenet_in3x32x32_out10
+device: cuda
+seed: 42
+TRAIN: 
+  resume: 
+  momentum: 0.9
+  lr: 0.001
+  epochs: 20
+with_cuda: True
+experiment_name: e0064
+DATASET: 
+  batch_size: 32
+  path: data/deepfashion
+  download: False
+  batch_size_val: 64
+  name: fashion
+

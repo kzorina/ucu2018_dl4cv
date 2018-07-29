@@ -1,0 +1,2 @@
+ epoch  avg_acc_train avg_loss_train    avg_acc_val   avg_loss_val   elapsed_time
+     1        69.2889         0.8665        69.4215         0.8637    00:00:06:14
