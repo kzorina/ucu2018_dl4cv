@@ -8,6 +8,7 @@ To create dataset for training I used separately ```dataset_create_my.py```.
 In this series of experiments I used next categories from dataset: 
 ```['Tee', 'Hoodie', 'Skirt', 'Shorts', 'Dress', 'Jeans']```
 
+All code can be found on https://github.com/kzorina/ucu2018_dl4cv
 # Training LeNet-like model on DeepFashion dataset (baseline)
 
 Baseline with LeNet model.
@@ -28,7 +29,7 @@ For comparison I used only 20 epoch to speed up the computation.
   
 ## Interpretation
 
-As we can see on the next plots, around 20 epoch our model started to overfit.
+As we can see on the next plots, after 20th epoch our model starts to overfit.
 
 ![Acc vs Epoch](fig/e_0017_train_acc.PNG?ra=true "Train Acc vs Epoch")
 ![Acc vs Epoch](fig/e_0017_test_acc.PNG?ra=true "Test Acc vs Epoch")
@@ -79,7 +80,7 @@ init_transform = transforms.Compose([
   
 ## Interpretation
 
-On first we can see transformation applied. Second image shows that test accuracy went down for 3%. 
+On first image we can see transformation applied. Second image shows that test accuracy went down for 3%. 
 
 
 
@@ -98,9 +99,9 @@ We should change model or change augmentation to get better results.
 
 I wanted to experiment with different models and compare them. 
 First I tried to run ```vgg19``` on my local machine. 1/295 of epoch took 2 mins. 
-Simple calculations lead me to UCU GPU. 
+Simple calculations of time needed to run it locally lead me to UCU GPU. 
 I tried to run pretrained resnet and pretrained vgg.
-Unfortunately I keep getting some errors with connection to during this models were running there.
+Unfortunately I keep getting some errors with connection to GPU during this models were running there.
 For LeNet I did not got any errors, so other experiments will be with LeNet.
 
 I tried not once and one experiment with ResNet survived 8 epochs!
@@ -145,6 +146,7 @@ As I did not manage to get UCU GPU to work with this models - I will continue wi
 # Manually cleaning
 
 I decided to look, which category model is getting wrong.
+
 ![Acc vs Epoch](fig/e_0055_accuracy_dress.PNG?ra=true "Accuracy Dress")
 ![Acc vs Epoch](fig/e_0055_accuracy_hoodie.PNG?ra=true "Accuracy Hoodie")
 ![Acc vs Epoch](fig/e_0055_accuracy_jeans.PNG?ra=true "Accuracy Jeans")
@@ -156,6 +158,7 @@ As we can see, hoodie accuracy is drastically bad.
 I looked on the real images and I think, I understand neural net :)
 ![Acc vs Epoch](fig/Hoodie_strange.PNG?ra=true "Data")
 I would also name some of them tee or scirt.
+
 So I decided to manually clean data for Hoodies.
 
 ## Description
@@ -164,7 +167,7 @@ Experiment e0072
 
 Training time [cpu]: ~ 60 min. (20 epochs)
 
-Deleted about 200 images of fake hoodies.        
+Deleted about 200 images of "fake" hoodies.        
 
 ## Deliverables
 
@@ -181,7 +184,7 @@ It seems that accuracy for Hoodie became better, but not significantly
 ## Conclusion
 
 It is a good idea to find some better data for hoodie, or investigate more, 
-why it misses to tune something.
+why it does not get it right and tune something.
   
 <!--- ###################################################### --->
 
@@ -217,7 +220,7 @@ We can see that test accuracy and loss remain the same while train became less s
 
 ## Conclusion
 
-Scheduling learning rate to be smaller saves us from overfitting.
+When we schedule learning rate to decrease over time - it saves us from overfitting.
   
 <!--- ###################################################### --->
 
@@ -308,4 +311,4 @@ For current task color doesn't play important role!
 # Ideas for improvement
 1. Find GPU, or figure out how to work without crashing on UCU one. And try different complex models like VGG, Resnet, Inception etc.
 2. Look carefully on dataset, maybe for some categories find other data.
-3. Try to take small amount of proper data and fine-tune some model.
+3. Try to take small amount of proper data and fine-tune on some state-of-the-art model.
