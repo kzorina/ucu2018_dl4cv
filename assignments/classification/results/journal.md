@@ -10,14 +10,14 @@ In this series of experiments I used next categories from dataset:
 
 # Training LeNet-like model on DeepFashion dataset (baseline)
 
-The goal here is to train simple model on cifar10 dataset without gpu support.
+Baseline with LeNet model.
 
 ## Description
 
 Experiment e0017
 
 Training time [cpu]: ~ 205 min. (30 epochs), later on I run it on gpu, ~ 60 min (20 epoch)
-For compasison I used only 20 epoch later to speed up the computation.
+For comparison I used only 20 epoch to speed up the computation.
 
 ## Deliverables
 
@@ -49,7 +49,7 @@ We get around 79% accuracy on baseline model. Let's try what will change if we c
 
 # Data augmentation 1
 
-I desided to try some augmentations. First let's try random affine transformations.
+I decided to try some augmentations. First let's try random affine transformations.
 
 ## Description
 
@@ -100,7 +100,7 @@ I wanted to experiment with different models and compare them.
 First I tried to run ```vgg19``` on my local machine. 1/295 of epoch took 2 mins. 
 Simple calculations lead me to UCU GPU. 
 I tried to run pretrained resnet and pretrained vgg.
-Unfortunatelly I keep getting some errors with connection to during this models were running there.
+Unfortunately I keep getting some errors with connection to during this models were running there.
 For LeNet I did not got any errors, so other experiments will be with LeNet.
 
 I tried not once and one experiment with ResNet survived 8 epochs!
@@ -128,7 +128,7 @@ model = resnet18(pretrained=True)
   
 ## Interpretation
 
-On next plots we can see how ResNet (gray one) overperforms LeNet from the first epoch!
+On next plots we can see how ResNet (gray one) outperforms LeNet from the first epoch!
 
 ![Acc vs Epoch](fig/e_0068_test_acc.png?ra=true "Test Acc vs Epoch")
 ![Acc vs Epoch](fig/e_0068_test_loss.png?ra=true "Test Loss vs Epoch")
@@ -261,7 +261,7 @@ In my case Adam optimazer is better choice then SGD.
 
 # Grauscale
 
-I am interestend, how important color information is for task of category classification. 
+I am interested, how important color information is for task of category classification. 
 So I decided to try convert everything into grayscale and see what happens.
 
 ## Description
